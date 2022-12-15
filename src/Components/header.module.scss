@@ -1,0 +1,49 @@
+
+    .cartImg {
+        width: 4vw;
+        height: 2vw;
+    }
+    .acc {
+        width: 3vw;
+        height: 1.7vw;
+    }
+    .logo {
+      cursor: pointer;
+      display: flex;
+    }
+    .lg {
+        width: 10vw;
+        height: 6vw;
+    }
+    li {
+      cursor: pointer;
+    }
+    .header {
+        padding: 2.2vw 3vw 0vw 8vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1vw;
+    }
+    .pages{
+        display: flex;
+      li{
+        margin-right: 4vw;
+      }
+    }
+    .shop {
+        display: flex;
+        align-items: center;
+      .cart {
+        display: flex;
+        align-items: center;
+        .uah{
+          margin-left: 1vw;
+          font-weight: 500;
+        }
+      }
+    }
+    .selectedPage {
+        font-weight: 500;
+        border-bottom: .2vh solid #000;
+       }

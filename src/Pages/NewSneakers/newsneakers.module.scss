@@ -1,0 +1,13 @@
+.container {
+    margin-top: 2vw;
+    text-align: center;
+}
+.sneakers {
+    margin-left: 3vw;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-top: 3vw;
+  }

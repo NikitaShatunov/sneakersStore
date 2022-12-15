@@ -1,0 +1,10 @@
+.gallery {
+    display: grid;
+    margin-top: 1vw;
+    grid-template-columns: repeat(3, 1fr);
+    width: 320px;
+   img{
+    margin-right: 21px;
+    margin-top: 16px;
+   }
+}

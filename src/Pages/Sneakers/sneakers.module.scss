@@ -1,0 +1,55 @@
+.container {
+    background-color: #A9A9A9;
+    padding: 2vw;
+    margin: 3vw;
+    text-align: center;
+    border-radius: 18px;
+    height: 100vh;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+          font-size: 1vw;  
+          span {
+            color: #C8102E;
+            border-bottom: #C8102E 1px dashed;
+            cursor: pointer;
+          }
+        }
+    }
+}
+.line {
+  height: 5px;
+  background-color: #D9D9D9;
+  border-radius: 13px;
+}
+.brands {
+  text-align: left;
+  li {
+    padding: .1vw;
+  }
+}
+.sidebar {
+  background: #D9D9D9;
+  padding: 1vw;
+  float: left;
+  height: 70%;
+  width: 20%;
+  margin-top: 2vw;
+  border-radius: 2px;
+}
+.h2 {
+  font-size: 1vw;
+  margin: 0;
+  margin-bottom: 1vw;
+}
+.sneakers {
+  float: right;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin-top: 2vw;
+  margin-right: 1.6vw;
+}
