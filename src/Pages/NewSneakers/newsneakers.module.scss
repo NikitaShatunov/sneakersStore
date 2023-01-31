@@ -1,13 +1,26 @@
 .container {
-    margin-top: 2vw;
+  background-color: #a9a9a9;
+  padding: 18px;
+  margin: 68px;
+  border-radius: 18px;
+  padding-top: 14px;
+  height: 820px;
+  h1 {
     text-align: center;
-}
-.sneakers {
-    margin-left: 3vw;
-    align-items: center;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    margin-top: 3vw;
   }
+}
+.line {
+  height: 5px;
+  background-color: #d9d9d9;
+  border-radius: 13px;
+}
+
+.sneakers {
+  margin-left: 68px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin-top: 68px;
+}

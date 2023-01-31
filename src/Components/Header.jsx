@@ -10,7 +10,7 @@ const Header = () => {
       </div></Link>
       <ul className = {styles.pages}>
         <li className={location.pathname ==='/' ? styles.selectedPage : ''}><Link to='/'>Головна</Link></li>
-        <li className={location.pathname ==='/sneakers' ? styles.selectedPage : ''}><Link to='/sneakers'>Кроссівки</Link></li>
+        <li className={location.pathname ==='/sneakers' ? styles.selectedPage : ''}><Link to='/sneakers'>Кросівки</Link></li>
         <li className={location.pathname ==='/about' ? styles.selectedPage : ''}><Link to='/about'>Про нас</Link></li>
         <li className={location.pathname ==='/pay' ? styles.selectedPage : ''}><Link to='/pay'>Оплата</Link></li>
         <li className={location.pathname ==='/new' ? styles.selectedPage : ''}><Link to='/new'>Новинки</Link></li>

@@ -7,20 +7,20 @@ const Cart = () => {
                 <h1>Кошик</h1>
             </div>
             <div className={styles.line}></div>
-            <ul className={styles.propsNames}>
-                <li>Товар</li>
-                <li>Назва</li>
-                <li>Розмір</li>
-                <li>Кількість</li>
-                <li>Ціна</li>
-            </ul>
-            <ul className={styles.props}>
-                <li><img src="./img/newBalance/cartvar.png" alt="cartvar" /></li>
-                <li className={styles.name}>NEW BALANCE 993</li>
-                <li className={styles.size}>42 EU</li>
-                <li className={styles.count}><img src="/img/counter.png" alt="counter" /></li>
-                <li>₴6499</li>
-            </ul>
+            <div className={styles.header}>
+                <div>Товар</div>
+                <div>Назва</div>
+                <div>Розмір</div>
+                <div>Кількість</div>
+                <div>Ціна</div>
+            </div>
+            <div className={styles.main}>
+            <div><img src="./img/newBalance/cartvar.png" alt="cartvar" /></div>
+                <div className={styles.name}>NEW BALANCE 993</div>
+                <div className={styles.size}>42 EU</div>
+                <div className={styles.count}><img src="/img/counter.png" alt="counter" /></div>
+                <div>₴6499</div>
+            </div>
             <div className={styles.line}></div>
             <div className={styles.footer}>
                 <span>Кількість товарів: 1</span>

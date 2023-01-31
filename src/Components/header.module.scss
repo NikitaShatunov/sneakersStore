@@ -1,34 +1,34 @@
 
     .cartImg {
-        width: 4vw;
-        height: 2vw;
+        width: 64px;
+        height: 32px;
     }
     .acc {
-        width: 3vw;
-        height: 1.7vw;
+        width: 48px;
+        height: 27px;
     }
     .logo {
       cursor: pointer;
       display: flex;
     }
     .lg {
-        width: 10vw;
-        height: 6vw;
+        width: 160px;
+        height: 96px;
     }
     li {
       cursor: pointer;
     }
     .header {
-        padding: 2.2vw 3vw 0vw 8vw;
+        padding: 40px 48px 0 142px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 1vw;
+        font-size: 16px;
     }
     .pages{
         display: flex;
       li{
-        margin-right: 4vw;
+        margin-right: 68px;
       }
     }
     .shop {
@@ -38,12 +38,12 @@
         display: flex;
         align-items: center;
         .uah{
-          margin-left: 1vw;
+          margin-left: 12px;
           font-weight: 500;
         }
       }
     }
     .selectedPage {
         font-weight: 500;
-        border-bottom: .2vh solid #000;
+        border-bottom: 1px solid #000;
        }
