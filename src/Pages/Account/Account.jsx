@@ -17,7 +17,7 @@ const Account = () => {
             <div className={styles.line}></div>
             <h2>Вам сподобалося:</h2>
             <div className={styles.sneakers}>
-            {data.map(obj => like.some(item => item.title === obj.title) && <SneakerBlock key={obj.id} title = {obj.title} imageUrl={obj.imageUrl} price={obj.price} />)}
+            {data.map(obj => like.some(item => item.title === obj.title) && <SneakerBlock key={obj.id} id={obj.id} title = {obj.title} imageUrl={obj.imageUrl} price={obj.price} />)}
             </div>
         </div>
     )

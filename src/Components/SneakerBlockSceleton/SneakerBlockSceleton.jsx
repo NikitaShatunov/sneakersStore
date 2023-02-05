@@ -1,11 +1,11 @@
 import ContentLoader from "react-content-loader"
-
+import styles from "./sceleton.module.scss"
 const SneakerBlockSceleton = (props) => {
  return(
-    <ContentLoader 
-    speed={2}
-    width={196}
-    height={256}
+    <ContentLoader className={styles.main}
+    speed={.2}
+    width={220}
+    height={250}
     viewBox="0 0 196 256"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"

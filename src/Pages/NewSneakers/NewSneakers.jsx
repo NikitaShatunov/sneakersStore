@@ -5,31 +5,26 @@ import { useNavigate } from "react-router";
 import styles from './newsneakers.module.scss'
 import { fetchData } from '../../redux/slices/sneakersFetchSlice';
 import SneakerBlock from "../../Components/SneakerBlock"
+import axios from 'axios';
 
 const NewSneakers = () => {
-    const { data, loading, error } = useSelector(state => state.data);
-    const isMounted = React.useRef(false);
-    const dispatch = useDispatch();
-  
-    React.useEffect(() => {
-      if(!isMounted.current) {
-        const json = JSON.stringify(data);
-        localStorage.setItem('cart', json);  
-        dispatch(fetchData())
-      }
-      isMounted.current = true;
-    }, [data])
-   
+    const [data, setData] = React.useState([])
+    const didMounted = React.useRef(false);
     const navigate = useNavigate()
-    if(error) {
+
+    React.useEffect(() => {
+      axios.get(`https://636106e067d3b7a0a6bbab86.mockapi.io/sneakers`).then(array => setData(array.data)).catch((err) => {
+        alert('Сталася помилка')
         navigate('/')
-    }
+      })
+    },[])
+  
     return(
            <div className={styles.container}>
            <h1>Нові пари:</h1>
            <div className={styles.line}></div>
            <div className={styles.sneakers}>
-            {data.map(obj => <SneakerBlock key={obj.id} title = {obj.title} imageUrl={obj.imageUrl} price={obj.price} liked={obj.liked}/>)}
+            {data.map(obj => <SneakerBlock key={obj.id} id={obj.id} title = {obj.title} imageUrl={obj.imageUrl} price={obj.price} liked={obj.liked}/>)}
             </div>
            </div>
     )
