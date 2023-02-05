@@ -1,8 +1,10 @@
 import React from "react";
 import styles from './header.module.scss'
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
    const location = useLocation()
+   const totalPrice = useSelector(state => state.cart.totalPrice)
  return(
     <div className={styles.header}>
      <Link to='/'> <div className = {styles.logo}>
@@ -17,7 +19,7 @@ const Header = () => {
         </ul>
        <ul className={styles.shop}>
           <Link to='/account'><li className='mr-30'><img className={styles.acc} src='/img/account.svg'alt='account' /></li></Link>
-          <Link to='/cart'><li className={styles.cart}><img className={styles.cartImg} src='/img/cart.svg' alt='cart' /><span className={styles.uah}>3200 uah</span></li></Link>
+          <Link to='/cart'><li className={styles.cart}><img className={styles.cartImg} src='/img/cart.svg' alt='cart' /><span className={styles.uah}>{totalPrice} uah</span></li></Link>
         </ul>
      </div>
  )

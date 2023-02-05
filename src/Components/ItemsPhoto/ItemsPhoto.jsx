@@ -1,10 +1,10 @@
 import styles from './itemsphoto.module.scss'
 
-const ItemsPhoto = () => {
+const ItemsPhoto = ({imageUrl}) => {
     return(
         <>
-        <div className={styles.mainPhoto}>
-            <img src="/img/newBalance/NewBalance.png" alt="new" />
+        <div >
+            <img className={styles.mainPhoto} src={imageUrl} alt="new" />
             <div className={styles.gallery}>
             <img src="/img/newBalance/NewBalance1.png" alt="new1" />
             <img src="/img/newBalance/NewBalance2.png" alt="new2" />

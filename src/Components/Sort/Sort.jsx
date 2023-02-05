@@ -1,16 +1,16 @@
 import styles from "./sort.module.scss";
 import React from "react";
-import { setSort } from "../../redux/slices/filterSlice";
+import { setSort, setAsc } from "../../redux/slices/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Sort = () => {
   const dispatch = useDispatch();
   const [isVisibleSort, setIsVisibleSort] = React.useState(false);
-  const [isAsc, setIsAsc] = React.useState(true);
+  const isAsc = useSelector(state => state.filter.asc)
   const sortRef = React.useRef();
 
   const onClickAsc = () => {
-    setIsAsc(!isAsc);
+    dispatch(setAsc(!isAsc))
   };
   const list = [
     { name: "популярністю", prop: "rating" },

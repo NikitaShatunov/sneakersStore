@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    brand: "adidas",
+    brand: "Всі",
     sort: {
         name: "популярністю",
         prop: "rating",
       },
-    asc: true,
+    asc: false,
     searchValue: '',
 }
 
