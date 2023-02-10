@@ -3,8 +3,16 @@ import styles from './header.module.scss'
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Header = () => {
+   const like = useSelector(state => state.cart.like)
+   const item = useSelector((state) => state.cart.item);
    const location = useLocation()
    const totalPrice = useSelector(state => state.cart.totalPrice)
+   React.useEffect(() => {
+      const likeJSON = JSON.stringify(like)
+      const itemJSON = JSON.stringify(item)
+      localStorage.setItem('like', likeJSON)
+      localStorage.setItem('item', itemJSON)
+    },[like, item])
  return(
     <div className={styles.header}>
      <Link to='/'> <div className = {styles.logo}>

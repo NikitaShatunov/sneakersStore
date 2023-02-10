@@ -1,10 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { calcTotalCount, calcTotalPrice } from "../../utils/calcCartValue";
+
+
+
+const getJSONcartStorage = () => {
+    const dataLike = localStorage.getItem('like')
+    const like = dataLike ? JSON.parse(dataLike) : []
+    const dataItem = localStorage.getItem('item')
+    const item = dataItem ? JSON.parse(dataItem) : []
+    const totalCount = calcTotalCount(item)
+    const totalPrice = calcTotalPrice(item)
+    return {
+        like,
+        item,
+        totalCount,
+        totalPrice,
+    }
+}
+
+const { like, item, totalCount, totalPrice } = getJSONcartStorage()
 
 const initialState = {
-    like: [],
-    item: [],
-    totalPrice: 0,
-    totalCount: 0,
+    like,
+    item,
+    totalPrice,
+    totalCount,
 }
 
 
@@ -53,10 +73,15 @@ const cartSlice = createSlice({
             state.totalPrice = state.item.reduce((sum, item) => sum + item.price * item.count, 0
             )
             state.totalCount = state.item.reduce((sum, item) => sum + item.count, 0)
+        },
+        clearCart: (state) => {
+            state.item = [];
+            state.totalCount = 0;
+            state.totalPrice = 0;
         }
     }
 })
 
-export const { setLike, removeLike, addItem, plusItem, minusItem, removeItem } = cartSlice.actions;
+export const { setLike, removeLike, addItem, plusItem, minusItem, removeItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

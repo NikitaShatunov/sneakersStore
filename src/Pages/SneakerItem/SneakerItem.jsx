@@ -5,7 +5,7 @@ import axios from "axios";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeLike, setLike, addItem } from "../../redux/slices/cartSlice";
-
+import { Link } from "react-router-dom";
 const SneakerItem = () => {
   const [data, setData] = React.useState([])
   const navigate = useNavigate()
@@ -64,7 +64,7 @@ const {title} = data
             <img src="/img/cart.svg" alt="cart" />
             <p >ДОДАТИ У КОШИК</p>
           </div>
-          <div className={styles.button2}>Придбати зараз</div>
+         <Link to="/delivery"> <div onClick={() => onClickAddInCart()} className={styles.button2}>Придбати зараз</div></Link>
           <div className={styles.like} onClick={() => onClickLike()}>
           {isLiked ? (
              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 1024 1024" className="icon" version="1.1"><path d="M725.333333 192c-89.6 0-168.533333 44.8-213.333333 115.2C467.2 236.8 388.266667 192 298.666667 192 157.866667 192 42.666667 307.2 42.666667 448c0 253.866667 469.333333 512 469.333333 512s469.333333-256 469.333333-512c0-140.8-115.2-256-256-256z" fill="#F44336"/><path d="M725.333333 192c-89.6 0-168.533333 44.8-213.333333 115.2C467.2 236.8 388.266667 192 298.666667 192 157.866667 192 42.666667 307.2 42.666667 448c0 253.866667 469.333333 512 469.333333 512s469.333333-256 469.333333-512c0-140.8-115.2-256-256-256z" fill="#F44336"/></svg>

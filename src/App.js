@@ -10,6 +10,11 @@ import About from './Pages/About/About';
 import Pay from './Pages/Pay/Pay';
 import Sneakers from './Pages/Sneakers/Sneakers';
 import SneakerItem from './Pages/SneakerItem/SneakerItem';
+import { DeliveryType } from './Pages/Delivery/DeliverType';
+import { Adress } from './Pages/Delivery/Adress';
+import { PayType } from './Pages/Delivery/PayType';
+import { EndForm } from './Pages/Delivery/EndForm';
+import { Thanks } from './Pages/Delivery/Thanks';
 function App() {
   return (
     //clear убирает лишние стили
@@ -24,7 +29,12 @@ function App() {
       <Route path='/cart' element={<Cart />} />
       <Route path='/account' element={<Account />} />
       <Route path='/sneakers/:id' element={<SneakerItem />} />
-    </Routes>
+      <Route path='/delivery' element={<DeliveryType />}/>
+      <Route path='/adress' element={<Adress />}/>
+      <Route path='/payType' element={<PayType />}/>
+      <Route path='/total' element={<EndForm />}/>
+      <Route path='/order' element={<Thanks />}/>
+    </Routes> 
     </div>
   );
 }

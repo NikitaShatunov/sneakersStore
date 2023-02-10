@@ -1,8 +1,9 @@
 import styles from "./cart.module.scss";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { minusItem, plusItem, removeItem } from "../../redux/slices/cartSlice";
+import { clearCart, minusItem, plusItem, removeItem } from "../../redux/slices/cartSlice";
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const item = useSelector((state) => state.cart.item);
@@ -23,11 +24,17 @@ const Cart = () => {
     }
     
   }
+  const onClickClearCart =() => {
+    if(window.confirm("Ви бажаєте очистити кошик?")){
+      dispatch(clearCart())
+    }
+  }
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <img src="/img/cart.svg" alt="cart" />
-        <h1>Кошик</h1>
+        <div className={styles.svgCart}><img src="/img/cart.svg" alt="cart" />
+        <h1>Кошик</h1></div>
+        <div onClick={() => onClickClearCart()} className={styles.svgTrash}><img src="/img/trash.svg" alt="trash" /><div>Очистити кошик</div></div>
       </div>
       <div className={styles.line}></div>
       {Boolean(item.length) ? (
@@ -43,7 +50,7 @@ const Cart = () => {
             {item.map((obj) => (
               <div key={uuidv4()} className={styles.main}>
                 <div>
-                  <img src={obj.imageUrl} />
+                  <img src={obj.imageUrl} alt="img"/>
                 </div>
                 <div className={styles.name}>{obj.title}</div>
                 <div className={styles.size}>{obj.size} EU</div>
@@ -61,7 +68,8 @@ const Cart = () => {
                   </button>
                 </div>
                 <div>{obj.price*obj.count}₴</div>
-               <div onClick={() => onClickRemove(obj)} className={styles.forSvg}> <svg
+               <div className={styles.forSvg}> <svg
+               onClick={() => onClickRemove(obj)}
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
                   version="1.1"
@@ -84,7 +92,7 @@ const Cart = () => {
           <div className={styles.footer}>
             <span>Кількість товарів: {totalCount}</span>
             <span>Загальна ціна: {totalPrice} ₴ </span>
-            <div className={styles.button2}>Замовити зараз</div>
+            <Link to='/delivery'><div className={styles.button2}>Замовити зараз</div></Link>
           </div>
         </>
       ) : (
