@@ -15,6 +15,8 @@ import { Adress } from './Pages/Delivery/Adress';
 import { PayType } from './Pages/Delivery/PayType';
 import { EndForm } from './Pages/Delivery/EndForm';
 import { Thanks } from './Pages/Delivery/Thanks';
+import { Registration } from './Pages/Account/Registration';
+import { Settigs } from './Pages/Account/Settings';
 function App() {
   return (
     //clear убирает лишние стили
@@ -34,6 +36,8 @@ function App() {
       <Route path='/payType' element={<PayType />}/>
       <Route path='/total' element={<EndForm />}/>
       <Route path='/order' element={<Thanks />}/>
+      <Route path='/reg' element={<Registration />}/>
+      <Route path='/settings' element={<Settigs />}/>
     </Routes> 
     </div>
   );

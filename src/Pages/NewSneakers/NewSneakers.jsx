@@ -1,9 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux';
 import React from "react"
 import { useNavigate } from "react-router";
 
 import styles from './newsneakers.module.scss'
-import { fetchData } from '../../redux/slices/sneakersFetchSlice';
 import SneakerBlock from "../../Components/SneakerBlock"
 import axios from 'axios';
 

@@ -59,7 +59,7 @@ const Sneakers = () => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-            <h2>Чоловічі кросівки, кеди і снікери:</h2>
+            <h2>Чоловічі кросівки і кеди:</h2>
             <Sort />
             </div>
             <div className={styles.line}></div>
